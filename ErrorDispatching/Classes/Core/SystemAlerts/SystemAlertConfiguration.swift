@@ -12,10 +12,10 @@ public struct SystemAlertAction {
     public typealias Handler = (() -> Void)
     
     public let title: String?
-    public let style: UIAlertActionStyle
+    public let style: UIAlertAction.Style
     public let handler: Handler?
     
-    public init(title: String?, style: UIAlertActionStyle, handler: Handler? = nil) {
+    public init(title: String?, style: UIAlertAction.Style, handler: Handler? = nil) {
         self.title = title
         self.style = style
         self.handler = handler
@@ -25,12 +25,12 @@ public struct SystemAlertAction {
 public struct SystemAlertConfiguration {
     public let title: String?
     public let message: String?
-    public let preferredStyle: UIAlertControllerStyle
+    public let preferredStyle: UIAlertController.Style
     public let actions: [SystemAlertAction]
     
     public init(title: String?, message: String?,
          actions: [SystemAlertAction],
-         preferredStyle: UIAlertControllerStyle = .alert) {
+         preferredStyle: UIAlertController.Style = .alert) {
         self.title = title
         self.message = message
         self.preferredStyle = preferredStyle
